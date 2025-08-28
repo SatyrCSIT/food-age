@@ -1,0 +1,76 @@
+# ========================================
+# Node / Dependencies
+# ========================================
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ========================================
+# Build outputs
+# ========================================
+.next/
+out/
+build/
+
+# ========================================
+# Testing
+# ========================================
+coverage/
+
+# ========================================
+# Logs / Debug
+# ========================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# ========================================
+# Environment files (Sensitive ⚠️)
+# ========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ========================================
+# Prisma
+# ========================================
+/prisma/dev.db
+/prisma/*.log
+# ถ้าไม่ต้องการเก็บ migration history ให้ uncomment บรรทัดล่าง
+# /prisma/migrations/
+
+# ========================================
+# Vercel
+# ========================================
+.vercel
+
+# ========================================
+# Misc
+# ========================================
+.DS_Store
+Thumbs.db
+*.pem
+next-env.d.ts
+
+# ========================================
+# Editor / IDE
+# ========================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo

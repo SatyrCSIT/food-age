@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Food {
+  id           String    @id @default(cuid())
+  name         String
+  description  String?
+  kcalPerServe Int
+  unit         String
+  ageBands     FoodAge[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model AgeBand {
+  id    String    @id @default(cuid())
+  min   Int
+  max   Int
+  focus String
+  foods FoodAge[]
+}
+
+model FoodAge {
+  foodId    String
+  ageBandId String
+  food      Food    @relation(fields: [foodId], references: [id])
+  ageBand   AgeBand @relation(fields: [ageBandId], references: [id])
+
+  @@id([foodId, ageBandId])
+}
